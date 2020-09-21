@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{useState} from 'react';
+import Message from './Message';
 import './App.css';
 
 function App() {
+  let [count, setCount] = useState(0);
+  let [morning, night] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`box ${morning? 'morning':'night'}`}>  
+      <h1>{morning? 'Morning': 'Night'}</h1>
+      <Message  counters = {count}/>
+     <button onClick={ () => setCount(count +1)}>Update Run</button>
+     <button onClick={ () => night(!morning) }>Update Day</button>
     </div>
+
   );
 }
 
