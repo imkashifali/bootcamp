@@ -1,17 +1,14 @@
-import React,{useContext} from 'react';
+import React from 'react';
 import Child from './Child';
-import CounterContext from './CounterContext';
+import Child2 from './Child2';
 
-const Parent =(props) => {
+const Parent =() => {
 
-  let CountValue =  useContext(CounterContext);
-  console.log(CountValue);
+
   return (
     <div>
       <Child />
-      {/* <h1>{props.mast}</h1> */}
-      <h1> {CountValue[0]}</h1> 
-      <button onClick={ () => {CountValue[1](++CountValue[0])}}>Parent Press</button>
+      <Child2 />
         
     </div>
   )

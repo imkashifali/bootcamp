@@ -7,8 +7,9 @@ const Child = () => {
   console.log(CountValue);
   return (
     <div>
-     
+         
       <Doc MIS="three"/>
+
       <h1> {CountValue[0]}</h1> 
         <button onClick={ () => {CountValue[1] (++CountValue[0]) }}>Childer Value</button>
     </div>
